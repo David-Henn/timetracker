@@ -6,14 +6,18 @@
   <div class="Tasks">
     <header>
       <h1>Todo List</h1>
+
       <form class="new-task">
         <input type="text" name="Project" placeholder="Project" />
         <input type="text" name="IssueNr" placeholder="Issue Number" />
         <input type="text" name="IssueHeader" placeholder="Issue Header" />
-        <input type="date" name="Start" placeholder="Start" />
-        <input type="date" name="End" placeholder="End" />
+        <input type="datetime" name="Start" placeholder="Start" />
+        <input type="datetime" name="End" placeholder="End" />
+        <input type="submit" class="submit" />
       </form>
     </header>
+
+
     <ul>
       {{#each tasks}} {{> task}} {{/each}}
     </ul>
