@@ -1,0 +1,28 @@
+<head>
+  <title>Timetracking</title>
+</head>
+
+<body>
+  <div class="Tasks">
+    <header>
+      <h1>Todo List</h1>
+      <form class="new-task">
+        <input type="text" name="Project" placeholder="Project" />
+        <input type="text" name="IssueNr" placeholder="Issue Number" />
+        <input type="text" name="IssueHeader" placeholder="Issue Header" />
+        <input type="date" name="Start" placeholder="Start" />
+        <input type="date" name="End" placeholder="End" />
+      </form>
+    </header>
+    <ul>
+      {{#each tasks}} {{> task}} {{/each}}
+    </ul>
+  </div>
+</body>
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+    <span class="text">Project: {{Project}} Nr: {{IssueNr}} Header: {{IssueHeader}} Start: {{Start}} End: {{End}}</span>
+  </li>
+</template>
